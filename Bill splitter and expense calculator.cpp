@@ -19,7 +19,7 @@ class person
 			tpaid=0;
 			thtp=0;
 		}
-    	read(char a[m],int c)
+    	void read(char a[m],int c)
 		{
 			strcpy(name,a);
 			code=c;
