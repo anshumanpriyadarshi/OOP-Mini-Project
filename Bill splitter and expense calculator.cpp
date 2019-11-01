@@ -1,6 +1,5 @@
 #include<iostream>
 #include<string.h>
-#include<conio.h>
 #include<iomanip>
 #define m 20
 using namespace std;
@@ -13,13 +12,13 @@ class person
     	int code;
     	person()
     	{
-    		for(int i=0;i<m;i++)
-    		{
-    			paid[i]=htp[i]=0;
-			}
 			total=0;
 			tpaid=0;
 			thtp=0;
+		}
+		void init(int i)
+		{
+    		paid[i]=htp[i]=0;
 		}
     	void read(char a[m],int c)
 		{
@@ -85,11 +84,10 @@ class person
 };
 void line()
     {
-            for(int i=1;i<41;i++)
-          cout<<"--";
-
-     cout<<"\n";
-   }
+        for(int i=1;i<41;i++)
+        cout<<"--";
+        cout<<"\n";
+    }
 int main()
 {
 	int n;
@@ -133,6 +131,10 @@ int main()
 	cin>>reason[i];
 	while(strcmp(reason[i],"end\0"))
 	{
+		for(j=0;j<n;j++)
+		{
+			p[j].init(i);
+		}
 		bill[i]=0;
 		cout<<"    Enter no. of peoples who paid (if all paid equally then enter 0 ) : ";
 		jump1 : cin>>n1;
